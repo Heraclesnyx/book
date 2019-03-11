@@ -3,14 +3,20 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * Users
- *
- * @ORM\Table(name="users")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\UsersRepository")
- */
-class Users
+* @ORM\Entity
+* @UniqueEntity(fields="email", message="Email already taken")
+* @UniqueEntity(fields="username", message="Username already taken")
+* Users
+*
+* @ORM\Table(name="users")
+* @ORM\Entity(repositoryClass="AppBundle\Repository\UsersRepository")
+*/
+class Users implements UserInterface
 {
     /**
      * @var int
@@ -42,6 +48,15 @@ class Users
      */
     private $rememberToken;
 
+    /**
+     * @ORM\Column(type="array")
+     */
+    private $roles;
+
+    public function __construct()
+    {
+        $this->roles = ['ROLE_USER'];
+    }
 
     /**
      * Get id
@@ -75,6 +90,16 @@ class Users
     public function getEmail()
     {
         return $this->email;
+    }
+
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    public function setUsername($username)
+    {
+        $this->username = $username;
     }
 
     /**
@@ -123,6 +148,15 @@ class Users
     public function getRememberToken()
     {
         return $this->rememberToken;
+    }
+
+    public function getRoles()
+    {
+        return $this->roles;
+    }
+
+    public function eraseCredentials()
+    {
     }
 }
 

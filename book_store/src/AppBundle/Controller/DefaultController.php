@@ -9,13 +9,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/admin")
      */
-    public function indexAction(Request $request)
+    public function adminAction()
     {
         // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        return new Response('<html><body>Admin page!</body></html>');
     }
 }
