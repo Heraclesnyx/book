@@ -155,8 +155,36 @@ class Users implements UserInterface
         return $this->roles;
     }
 
+
+     /** @see \Serializable::serialize() */
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->username,
+            $this->password,
+            $this->isActive,
+        ));
+    }
+    /** @see \Serializable::unserialize() */
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->username,
+            $this->password,
+            $this->isActive,
+            ) = unserialize($serialized, array('allowed_classes' => false));
+    }
+
     public function eraseCredentials()
     {
+    }
+
+
+     public function getSalt()
+    {
+        return null;
     }
 }
 

@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-class UserController extends BaseController
+class UsersController extends BaseController
 {
     /**
      * @Route("/login")
