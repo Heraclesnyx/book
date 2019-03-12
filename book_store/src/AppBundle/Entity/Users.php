@@ -6,7 +6,6 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
-
 /**
 * @ORM\Entity
 * @UniqueEntity(fields="email", message="Email already taken")
@@ -25,43 +24,40 @@ class Users implements UserInterface
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @ORM\Column(type="string", length=25, unique=true)
      */
     private $username;
-
+     /**
+     * @Assert\NotBlank
+     * @Assert\Length(max=4096)
+     */
+    private $plainPassword;
     /**
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=190)
      */
     private $email;
-
     /**
      * @ORM\Column(name="is_active", type="boolean")
      */
     private $isActive;
-
     /**
      * @var string
      *
      * @ORM\Column(name="password", type="string", length=190)
      */
     private $password;
-
-
     /**
      * @ORM\Column(type="array")
      */
     private $roles;
-
     public function __construct()
     {
         $this->isActive = false;
         $this->roles = ['ROLE_USER'];
     }
-
     /**
      * Get id
      *
@@ -71,7 +67,6 @@ class Users implements UserInterface
     {
         return $this->id;
     }
-
     /**
      * Set email
      *
@@ -82,10 +77,8 @@ class Users implements UserInterface
     public function setEmail($email)
     {
         $this->email = $email;
-
         return $this;
     }
-
     /**
      * Get email
      *
@@ -95,17 +88,24 @@ class Users implements UserInterface
     {
         return $this->email;
     }
-
     public function getUsername()
     {
         return $this->email;
     }
-
     public function setUsername($username)
     {
         $this->username = $username;
     }
+    
+     public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
 
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
+    }
     /**
      * Set password
      *
@@ -116,10 +116,8 @@ class Users implements UserInterface
     public function setPassword($password)
     {
         $this->password = $password;
-
         return $this;
     }
-
     /**
      * Get password
      *
@@ -129,7 +127,6 @@ class Users implements UserInterface
     {
         return $this->password;
     }
-
      /**
      * Set isActive
      *
@@ -151,19 +148,15 @@ class Users implements UserInterface
     {
         return $this->isActive;
     }
-
      public function isEnabled()
     {
         return $this->isActive;
     }
-
  
     public function getRoles()
     {
         return $this->roles;
     }
-
-
      /** @see \Serializable::serialize() */
     public function serialize()
     {
@@ -184,12 +177,9 @@ class Users implements UserInterface
             $this->isActive,
             ) = unserialize($serialized, array('allowed_classes' => false));
     }
-
     public function eraseCredentials()
     {
     }
-
-
      public function getSalt()
     {
         return null;
