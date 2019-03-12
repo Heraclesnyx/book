@@ -10,7 +10,6 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
 * @ORM\Entity
 * @UniqueEntity(fields="email", message="Email already taken")
-* @UniqueEntity(fields="username", message="Username already taken")
 * Users
 *
 * @ORM\Table(name="users")
@@ -28,11 +27,21 @@ class Users implements UserInterface
     private $id;
 
     /**
+     * @ORM\Column(type="string", length=25, unique=true)
+     */
+    private $username;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=190)
      */
     private $email;
+
+    /**
+     * @ORM\Column(name="is_active", type="boolean")
+     */
+    private $isActive;
 
     /**
      * @var string
@@ -41,12 +50,6 @@ class Users implements UserInterface
      */
     private $password;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="remember_token", type="string", length=100, nullable=true)
-     */
-    private $rememberToken;
 
     /**
      * @ORM\Column(type="array")
@@ -55,6 +58,7 @@ class Users implements UserInterface
 
     public function __construct()
     {
+        $this->isActive = false;
         $this->roles = ['ROLE_USER'];
     }
 
@@ -94,7 +98,7 @@ class Users implements UserInterface
 
     public function getUsername()
     {
-        return $this->username;
+        return $this->email;
     }
 
     public function setUsername($username)
@@ -126,30 +130,34 @@ class Users implements UserInterface
         return $this->password;
     }
 
-    /**
-     * Set rememberToken
+     /**
+     * Set isActive
      *
-     * @param string $rememberToken
+     * @param boolean $isActive
      *
-     * @return Users
+     * @return User
      */
-    public function setRememberToken($rememberToken)
+    public function setIsActive($isActive)
     {
-        $this->rememberToken = $rememberToken;
-
+        $this->isActive = $isActive;
         return $this;
     }
-
     /**
-     * Get rememberToken
+     * Get isActive
      *
-     * @return string
+     * @return bool
      */
-    public function getRememberToken()
+    public function getIsActive()
     {
-        return $this->rememberToken;
+        return $this->isActive;
     }
 
+     public function isEnabled()
+    {
+        return $this->isActive;
+    }
+
+ 
     public function getRoles()
     {
         return $this->roles;
