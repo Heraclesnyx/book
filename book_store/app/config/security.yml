@@ -33,7 +33,7 @@ security:
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
             http_basic: ~
 
-           
+           #pour la déconnexion de ma session
             logout:
                 path:   /logout
                 target: /
