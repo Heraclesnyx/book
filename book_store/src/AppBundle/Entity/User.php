@@ -14,7 +14,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 * @ORM\Table(name="users")
 * @ORM\Entity(repositoryClass="AppBundle\Repository\UsersRepository")
 */
-class Users implements UserInterface
+class User implements UserInterface
 {
     /**
      * @var int
@@ -96,7 +96,7 @@ class Users implements UserInterface
     {
         $this->username = $username;
     }
-    
+
      public function getPlainPassword()
     {
         return $this->plainPassword;

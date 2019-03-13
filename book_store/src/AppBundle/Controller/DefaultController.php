@@ -2,7 +2,7 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Users;
+use AppBundle\Entity\User;
 use AppBundle\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -32,8 +32,8 @@ class DefaultController extends Controller
 **/ 
     public function createAdminAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
-       $admin = new Users();
-       $form = $form = $this->createForm(UserType::class, $admin);
+       $admin = new User();
+       $form = $this->createForm(UserType::class, $admin);
        // $this->createFormBuilder($admin)
        //        ->add('username', TextType::class)
        //         ->add('email', EmailType::class, [
