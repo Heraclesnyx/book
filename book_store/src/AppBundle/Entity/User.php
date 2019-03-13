@@ -53,6 +53,7 @@ class User implements UserInterface
      * @ORM\Column(type="array")
      */
     private $roles;
+    
     public function __construct()
     {
         $this->isActive = false;

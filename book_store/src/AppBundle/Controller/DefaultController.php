@@ -27,34 +27,22 @@ class DefaultController extends Controller
       ]);
     }
 
-/**
-* @Route("/register", name="admin")
-**/ 
+
     public function createAdminAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
        $admin = new User();
        $form = $this->createForm(UserType::class, $admin);
-       // $this->createFormBuilder($admin)
-       //        ->add('username', TextType::class)
-       //         ->add('email', EmailType::class, [
-       //           'required' => true])
-       //         ->add('password', TextType::class)
-       //         ->add('save', SubmitType::class, ['label' => 'Create Admin'])
-       //         ->getForm();
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-          // $form->getData() holds the submitted values
-          // but, the original `$task` variable has also been updated
-          $password = $passwordEncoder->encodePassword($admin, $admin->getPlainPassword());
-          $admin->setPassword($password);
+
+      $form->handleRequest($request);
+      if ($form->isSubmitted() && $form->isValid()) {
+          
+        $password = $passwordEncoder->encodePassword($admin, $admin->getPlainPassword());
+        $admin->setPassword($password);
         
-          // $admin = $form->getData();
-          // ... perform some action, such as saving the task to the database
-          // for example, if Task is a Doctrine entity, save it!
-          $entityManager = $this->getDoctrine()->getManager();
-          $entityManager->persist($admin);
-          $entityManager->flush();
-          return $this->redirectToRoute('home');
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($admin);
+        $entityManager->flush();
+        return $this->redirectToRoute('login');
     }
         return $this->render('Auth/register.html.twig',[
           'form'=> $form->createView(),
@@ -64,6 +52,8 @@ class DefaultController extends Controller
 /**
 * @Route("/login", name="login")
 **/
+
+/*Rediriger la route vers une nouvelle URL*/
     public function loginAction(AuthenticationUtils $authenticationUtils)
     {
         // get the login error if there is one
