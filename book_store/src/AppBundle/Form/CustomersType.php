@@ -20,7 +20,7 @@ class CustomersType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Customers'
+            'data_class' => 'AppBundle\Entity\Customer'
         ));
     }
 
