@@ -42,6 +42,22 @@ class Book
      */
     private $gender;
 
+    /**
+     * @var int
+     *
+     * @ORM\ManyToOne(targetEntity="Customer", inversedBy="books")
+     * @ORM\JoinColumn(referencedColumnName="id", nullable=true)
+     */
+
+    private $customer;
+
+    /**
+     * @var date
+     *
+     * @ORM\Column(name="loan_date", type="date", nullable=true)
+     */
+    private $loan_date;
+
 
     /**
      * Get id
@@ -123,6 +139,56 @@ class Book
     public function getGender()
     {
         return $this->gender;
+    }
+
+    /**
+     * Set customer
+     *
+     * @param integer $customer
+     *
+     * @return Books
+     */
+    public function setCustomer($customer)
+    {
+        $this->customer = $customer;
+
+        return $this;
+    }
+
+
+    /**
+     * Get customer
+     *
+     * @return integer
+     */
+    public function getCustomer()
+    {
+        return $this->customer;
+    }
+
+
+    /**
+     * Get loan_date
+     *
+     * @return date
+     */
+    public function getLoanDate()
+    {
+        return $this->loan_date;
+    }
+
+    /**
+     * Set loan_date
+     *
+     * @param date $loan_date
+     *
+     * @return Books
+     */
+    public function setLaonDate($loan_date)
+    {
+        $this->loan_date = $loan_date;
+
+        return $this;
     }
 }
 

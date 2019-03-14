@@ -56,6 +56,16 @@ class Customer
      */
     private $email;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Book", mappedBy="customer")
+     */
+    private $books;
+
+    public function __construct()
+    {
+        $this->books = new ArrayCollection();
+    }
+
 
     /**
      * Get id
@@ -186,5 +196,14 @@ class Customer
     {
         return $this->email;
     }
+
+    /**
+     * Get books
+     */
+    public function getBooks()
+    {
+        return $this->books;
+    }
+
 }
 
