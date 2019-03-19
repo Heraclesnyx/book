@@ -10,4 +10,12 @@ namespace AppBundle\Repository;
  */
 class BooksRepository extends \Doctrine\ORM\EntityRepository
 {
+
+	public function getAllLoan() {
+	    $qb = $this->createQueryBuilder('l');
+
+	    $qb->where('l.customer is not null');
+
+    	return $qb->getQuery()->getArrayResult();
+}
 }
