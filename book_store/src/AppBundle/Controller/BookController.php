@@ -133,4 +133,14 @@ class BookController extends Controller
             ->getForm()
         ;
     }
+
+
+    // public function showBooks($id)
+    // {
+    //     $customer = $this->getDoctrine()
+    //         ->getRepository(Customer::class)
+    //         ->find($id);
+
+    //     $books = $customer->getProducts();
+    // }
 }
