@@ -36,6 +36,7 @@ class CustomersController extends Controller
      *
      * @Route("/new", name="customer_new")
      * @Method({"GET", "POST"})
+     *
      */
     public function newAction(Request $request)
     {
@@ -65,13 +66,16 @@ class CustomersController extends Controller
      */
     public function showAction(Customer $customer)
     {
-        dump($customer);die();
+        /*dump($customer);die();*/
+        //dump(count($customer->getBooks()));die();
         $deleteForm = $this->createDeleteForm($customer);
 
         return $this->render('customers/show.html.twig', array(
             'customer' => $customer,
             'delete_form' => $deleteForm->createView(),
         ));
+
+        dump(count($customer->getBooks()));
     }
 
     /**

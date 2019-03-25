@@ -14,7 +14,7 @@ class LoansType extends AbstractType
     
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder ->add('loans', CollectionType::class, [
+        $builder ->add('loans', EntityType::class, [
             'entry_type' => LoansType::class,
             'entry_options' => ['label' => false],
         ]);
