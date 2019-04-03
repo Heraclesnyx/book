@@ -1,34 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/cocur/slugify" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/doctrine/annotations" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/doctrine/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/doctrine/common" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/doctrine/doctrine-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/doctrine/doctrine-cache-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/doctrine/orm" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/fig/link-util" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/friendsofsymfony/user-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/incenteev/composer-parameter-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/jdorn/sql-formatter" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/knplabs/knp-menu" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/knplabs/knp-menu-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/psr/link" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/sensio/distribution-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/sensio/framework-extra-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/sensio/generator-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/sensiolabs/security-checker" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/sonata-project/admin-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/sonata-project/block-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/sonata-project/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/sonata-project/core-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/sonata-project/datagrid-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/sonata-project/doctrine-extensions" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/sonata-project/exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/swiftmailer/swiftmailer" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/symfony/monolog-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/symfony/phpunit-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/symfony/polyfill-apcu" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/symfony/polyfill-intl-icu" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/symfony/polyfill-php56" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/symfony/polyfill-php70" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/symfony/polyfill-util" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/symfony/security-acl" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/symfony/swiftmailer-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/symfony/symfony" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/twig/extensions" />
+      <excludeFolder url="file://$MODULE_DIR$/book_store/vendor/twig/twig" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library name="PHP Runtime" type="php">
-        <CLASSES>
-          <root url="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard" />
-        </CLASSES>
-        <SOURCES>
-          <root url="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="PHARS">
-        <CLASSES>
-          <root url="phar://$MODULE_DIR$/book_store/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/includes/ProjectWithXsdExtensionInPhar.phar/" />
-          <root url="phar://$MODULE_DIR$/book_store/vendor/symfony/phpunit-bridge/Tests/DeprecationErrorHandler/deprecation.phar/" />
-          <root url="phar://$MODULE_DIR$/book_store/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/Tests/DeprecationErrorHandler/deprecation.phar/" />
-          <root url="phar://$MODULE_DIR$/book_store/vendor/twig/twig/test/Twig/Tests/Loader/Fixtures/phar/phar-sample.phar/" />
-        </CLASSES>
-        <SOURCES>
-          <root url="phar://$MODULE_DIR$/book_store/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/includes/ProjectWithXsdExtensionInPhar.phar/" />
-          <root url="phar://$MODULE_DIR$/book_store/vendor/symfony/phpunit-bridge/Tests/DeprecationErrorHandler/deprecation.phar/" />
-          <root url="phar://$MODULE_DIR$/book_store/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/Tests/DeprecationErrorHandler/deprecation.phar/" />
-          <root url="phar://$MODULE_DIR$/book_store/vendor/twig/twig/test/Twig/Tests/Loader/Fixtures/phar/phar-sample.phar/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
   </component>
 </module>

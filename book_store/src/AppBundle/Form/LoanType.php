@@ -3,25 +3,35 @@
 namespace AppBundle\Form;
 
 use AppBundle\Entity\Book;
-// use AppBundle\Entity\Customer;
+use AppBundle\Entity\Customer;
+use AppBundle\Repository\BooksRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+
 
 class LoanType extends AbstractType
 {
-    
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder ->add('name');
+        $builder
+            ->add('available_books', EntityType::class, [
+                'class' => Book::class,
+                'required' => false,
+                'query_builder' => function(BooksRepository $er) {
+                    return $er->getAvailableBooks();
+                },
+                'choice_label' => 'name',
+                'mapped' => false
+            ])
+        ;
     }
-    
+
     public function configureOptions(OptionsResolver $resolver)
     {
-        #    Resolver
-        $resolver->setDefaults(array(
-            'data_class' => Book::class
-        ));
+        $resolver->setDefaults([
+            'data_class' => Customer::class
+        ]);
     }
 }

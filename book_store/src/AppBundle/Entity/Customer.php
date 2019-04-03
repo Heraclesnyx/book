@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
+
 /**
  * Customers
  *
@@ -202,6 +203,43 @@ class Customer
      * Get books
      */
     public function getBooks()
+    {
+        return $this->books;
+    }
+
+    /**
+     * @param mixed $books
+     */
+    public function setBooks($books)
+    {
+        $this->books = $books;
+    }
+
+    /**
+     * @param Book $book
+     * @return Customer
+     */
+    public function addBook(Book $book): self
+    {
+        if (!$this->books->contains($book)) {
+            $this->books[] = $book;
+            $book->setCustomer($this);
+        }
+        return $this;
+    }
+
+    /**
+     * @param Book $book
+     * @return Customer
+     */
+    public function removeBook(Book $book): self
+    {
+        if ($this->books->contains($book))
+            $this->books->removeElement($book);
+        return $this;
+    }
+
+    public function book()
     {
         return $this->books;
     }

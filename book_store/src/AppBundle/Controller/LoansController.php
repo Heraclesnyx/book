@@ -2,57 +2,95 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Book;
 use AppBundle\Entity\Customer;
+use AppBundle\Form\LoanType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-//use Symfony\Component\HttpFoundation\Response;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Routing\Annotation\Route;
+//use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 
 /**
- * Class LoansController.
+ * Class LoansController
+ * @package AppBundle\Controller
  *
  * @Route("/customer/loans")
  */
 class LoansController extends Controller
 {
-	/**
-     * @param Request $request.
+    /**
+     * @param Request $request
      *
-     * @Route("/", name="list_loans")
-     * @Method("GET")
+     * @Route("/", name="list_loans", methods={"GET"})
      */
+    public function showAction(Request $request)
+    {
+        #   Your own logic
+         $loansBook = $this->getDoctrine()
+            ->getRepository(Book::class)
+            ->getAllLoans();
 
-	public function showAction(Customer $customer)
-	{
-		$em = $this->getDoctrine()->getManager();
-
-
-		// $repository = $em->getRepository('AppBundle:Book');
-
-		//$em->getRepository('AppBundle:Book')->getLoanedBooks();
-
-        // $loans = $em->getRepository('AppBundle:Book')->findBy(array("customer" => true));
-
-        // return $this->render('loans/index.html.twig', array(
-        //     'loans' => $loans,
-        // ));
-        dump(count($customer->getBooks()));die();
-	}
+        return $this->render('loans/index.html.twig', array(
+            'loans' => $loansBook,
+        ));
 
 
-	/**
-     * @param Request $request.
-     * @param int $id 
+    }
+
+    /**
+     * @param Request $request
+     * @param int $id
+     * @return Response
      *
-     * @Route("/{id}", name="show_customer_loans",methods ={"GET","POST"}, requirements ={ "id" = "\d+"})
-     *
+     * @Route(
+     *     "/{id}",
+     *     name = "show_customer_loans",
+     *     methods = {"GET", "POST"},
+     *     requirements = {
+     *          "id" = "\d+"
+     *     }
+     * )
      */
+    public function showCustomerAction(Request $request, int $id)
+    {
+        $customerLoan = $this->getDoctrine()->getRepository(Customer::class)->getLoanRecords($id);
 
-	public function showCustomer(Request $request, int $id)
-	{
+        if (!$customerLoan)
+            throw new NotFoundHttpException();
 
-	}
+        $form = $this->createForm(LoanType::class, $customerLoan);
 
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+
+            if (!$request->request->get('loan')['available_books'])
+                die();
+
+            #   On charge le proxy pour limiter le nombre de requête
+            /**
+             * @var Book $book
+             */
+            $book = $em->getReference(Book::class, $request->request->get('loan')['available_books']);
+
+            $book
+                ->setCustomer($customerLoan)
+                ->setLaonDate(new \DateTime('now'))
+            ;
+
+            $em->persist($book);
+            $em->flush();
+
+            return $this->redirectToRoute('list_loans');
+        }
+
+        return $this->render('loans/loan.html.twig', [
+            'customer' => $customerLoan,
+            'form' => $form->createView()
+        ]);
+    }
 }

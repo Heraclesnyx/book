@@ -5,7 +5,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Book;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Book controller.
@@ -130,17 +130,8 @@ class BookController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('book_delete', array('id' => $book->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 
 
-    // public function showBooks($id)
-    // {
-    //     $customer = $this->getDoctrine()
-    //         ->getRepository(Customer::class)
-    //         ->find($id);
-
-    //     $books = $customer->getProducts();
-    // }
 }

@@ -1,10 +1,8 @@
 <?php
 
 namespace AppBundle\Repository;
-use AppBundle\AppBundle;
-use Doctrine\ORM\EntityRepository;
-use AppBundle\Entity\Book;
 
+use Doctrine\ORM\EntityRepository;
 /**
  * BooksRepository
  *
@@ -14,24 +12,23 @@ use AppBundle\Entity\Book;
 class BooksRepository extends EntityRepository
 {
 
-	public function getLoanedBooks(bool $loaned = true)
-	{
-    	#Your own logic
+    public function getAllLoans() {
+        $qb = $this->createQueryBuilder('l')
+        ->leftJoin('l.customer', 'b')
+        ->addSelect('b', 'l')
+        ->orderBy('l.customer', 'ASC');
 
-        return $this->findBy([
-            'loans' => $loaned
-        ]);
-        /*return this->$this->getEntityManager()
-            ->createQuery(
-                'SELECT $loaned FROM AppBundle:Book $loaned'
-            )
-            ->getResult();*/
-        /*$loan = $this->getentitymanager()
-        ->getrepository('appbundle:book')
-        ->findby(array($loaned))
-        ->getresult();
+        $qb->where('l.customer is not null');
 
-        return $loan;*/
-		
-	}
+        return $qb->getQuery()->getResult();
+    }
+
+    public function getAvailableBooks()
+    {
+        return $this->createQueryBuilder('b')
+            ->leftJoin('b.customer', 'c')
+            ->addSelect('c', 'b')
+            ->where('b.customer is null')
+            ->orderBy('b.name');
+    }
 }

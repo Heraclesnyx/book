@@ -4,8 +4,9 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Customer;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+//use Doctrine\ORM\EntityRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Customer controller.
@@ -61,8 +62,14 @@ class CustomersController extends Controller
     /**
      * Finds and displays a customer entity.
      *
-     * @Route("/{id}", name="customer_show")
-     * @Method("GET")
+     * @Route(
+     *     "/{id}",
+     *     name="customer_show",
+     *     methods = {"GET"},
+     *     requirements = {
+     *          "id" = "\d+"
+     *     }
+     * )
      */
     public function showAction(Customer $customer)
     {
@@ -75,7 +82,6 @@ class CustomersController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
 
-        dump(count($customer->getBooks()));
     }
 
     /**

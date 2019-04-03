@@ -74,7 +74,7 @@ class Book
      *
      * @param string $name
      *
-     * @return Books
+     * @return Book
      */
     public function setName($name)
     {
@@ -98,7 +98,7 @@ class Book
      *
      * @param string $author
      *
-     * @return Books
+     * @return Book
      */
     public function setAuthor($author)
     {
@@ -122,7 +122,7 @@ class Book
      *
      * @param string $gender
      *
-     * @return Books
+     * @return Book
      */
     public function setGender($gender)
     {
@@ -146,7 +146,7 @@ class Book
      *
      * @param integer $customer
      *
-     * @return Books
+     * @return Book
      */
     public function setCustomer($customer)
     {
@@ -182,7 +182,7 @@ class Book
      *
      * @param date $loan_date
      *
-     * @return Books
+     * @return Book
      */
     public function setLaonDate($loan_date)
     {

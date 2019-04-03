@@ -10,4 +10,16 @@ namespace AppBundle\Repository;
  */
 class CustomersRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getLoanRecords(int $id)
+    {
+        $qb = $this->createQueryBuilder('c');
+
+        $qb ->leftJoin('c.books', 'books')
+            ->addSelect('books')
+            ->where('c.id = :ID')
+            ->setParameter('ID', $id)
+        ;
+
+        return $qb->getQuery()->getOneOrNullResult();
+    }
 }
