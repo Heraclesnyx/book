@@ -1,18 +1,41 @@
 {% extends 'base.html.twig' %}
 
-
 {% block body %}
-    {{ form_label(books) }}
-    {{ form_errors(books) }}
+    <h1>Loans list</h1>
 
-    <ul>
-        {% for bookField in form.books %}
-            {{ dump(form.books) }}
-            <li>
-                {{ form_errors(bookField) }}
-                {{ form_widget(bookField) }}
-            </li>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Firstname</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for loan in loans %}
+
+            <tr>
+                <td><a href="{{ path('list_loans', { 'id': loan.id }) }}">{{ loan.id }}</a></td>
+                <td>{{ loan.name }}</td>
+                <td>{{ loan.author }}</td>
+                <td>{{ loan.gender }}</td>
+                <td>
+
+                </td>
+            </tr>
         {% endfor %}
+        </tbody>
+    </table>
+
+   {# <ul>
+        <li>
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
     </ul>
+    #}
+
 
 {% endblock %}

@@ -79,8 +79,7 @@ class LoansController extends Controller
 
             $book
                 ->setCustomer($customerLoan)
-                ->setLaonDate(new \DateTime('now'))
-            ;
+                ->setLaonDate(new \DateTime('now'));
 
             $em->persist($book);
             $em->flush();
