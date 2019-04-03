@@ -6,20 +6,27 @@
     <table class="table">
         <thead>
         <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Firstname</th>
+            <th scope="col">Nom client</th>
+            <th scope="col">Prénom Clients</th>
+            <th scope="col">Titre du livre emprunter</th>
+            <th scope="col">Auteur</th>
+            <th scope="col">Genre</th>
 
         </tr>
         </thead>
         <tbody>
         {% for loan in loans %}
-
+            {#{{ dump(loan) }}#}
             <tr>
-                <td><a href="{{ path('list_loans', { 'id': loan.id }) }}">{{ loan.id }}</a></td>
+                <td><a href="{{ path('show_customer_loans', { 'id': loan.id }) }}">{{ loan.customer.name }}</a></td>
+                <td>{{ loan.customer.firstname }} </td>
                 <td>{{ loan.name }}</td>
                 <td>{{ loan.author }}</td>
                 <td>{{ loan.gender }}</td>
+
+
+
+                {#<td>{{ loan.loan_date }}</td>#}
                 <td>
 
                 </td>
