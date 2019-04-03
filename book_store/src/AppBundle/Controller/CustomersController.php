@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;use Symfony\Component\HttpFoundat
 /**
  * Customer controller.
  *
- * @Route("customer")
+ * @Route("/customer")
  */
 class CustomersController extends Controller
 {
@@ -112,8 +112,8 @@ class CustomersController extends Controller
     /**
      * Deletes a customer entity.
      *
-     * @Route("/{id}", name="customer_delete")
-     * @Method("DELETE")
+     * @Route("/{id}/delete", name="customer_delete")
+     * @Method("POST")
      */
     public function deleteAction(Request $request, Customer $customer)
     {
