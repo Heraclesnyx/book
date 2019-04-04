@@ -42,6 +42,6 @@ security:
             #form_login: ~
     access_control:
         # require ROLE_ADMIN for /admin*
-        - { path: ^/(login)$, role: IS_AUTHENTICATED_ANONYMOUSLY, allow_if: "not has_role('ROLE_USER')" }
+        - { path: ^/login, allow_if: "!is_authenticated()" }
         - { path: ^/, role: ROLE_USER }
         # - { path: ^/admin, roles: ROLE_ADMIN }

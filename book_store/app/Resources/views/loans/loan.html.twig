@@ -17,7 +17,7 @@
     <div class="form-group">
         <ul class="books">
             {% for book in customer.book %}
-                {{ dump(book) }}
+    {#{{ dump(book) }}#}
                 <li>{{ book.name }}&emsp;<a href="#" class="text-danger">rendre</a></li>
             {% endfor %}
         </ul>
