@@ -101,8 +101,8 @@ class BookController extends Controller
     /**
      * Deletes a book entity.
      *
-     * @Route("/{id}", name="book_delete")
-     * @Method("DELETE")
+     * @Route("/{id}/delete", name="book_delete")
+     * @Method("POST")
      */
     public function deleteAction(Request $request, Book $book)
     {
