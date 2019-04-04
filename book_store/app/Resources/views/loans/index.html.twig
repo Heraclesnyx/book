@@ -16,7 +16,7 @@
         </thead>
         <tbody>
         {% for loan in loans %}
-        {{ dump(loan) }}
+        {#{{ dump(loan) }} #}
             <tr>
                 <td><a href="{{ path('show_customer_loans', { 'id': loan.customer.id }) }}">{{ loan.customer.name}} {{ loan.customer.firstname}}</a></td>
                 <td>{{ loan.name }} </td>
