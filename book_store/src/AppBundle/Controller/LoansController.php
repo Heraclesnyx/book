@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Doctrine\ORM\EntityManagerInterface;
 //use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 
@@ -92,4 +94,34 @@ class LoansController extends Controller
             'form' => $form->createView()
         ]);
     }
+
+    /**
+     * Deletes a loan.
+     *
+     * @var Book $book
+     *@Route("/{id}/delete", name="loan_delete")
+     *@Method("POST")
+     */
+    public function BringBackAction(Request $request, int $id, Book $book)
+    {
+        /*dump($book);die();*/
+
+
+        $customerLoan= $this->getDoctrine()->getRepository(Book::class)->findBy(
+            array('id'=>$book->getId())
+    );
+
+        /*$entityManager = $this->getDoctrine()->getManager();*/
+
+        $customerLoan->setCustomer(null);
+        $customerLoan->setLaonDate(null)
+            ->persist($customerLoan);
+
+        $customerLoan->flush();
+
+        return $this->redirectToRoute("/show_customer_loans/");
+
+    }
+
+
 }

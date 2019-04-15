@@ -18,7 +18,12 @@
         <ul class="books">
             {% for book in customer.book %}
     {#{{ dump(book) }}#}
-                <li>{{ book.name }}&emsp;<a href="#" class="text-danger">rendre</a></li>
+                <li>{{ book.name }}
+                    <form method="post" action="{{ path('loan_delete', {'id': book.id}) }}">
+                        <button type="submit">rendre</button>
+                    </form>
+                </li>
+                    {# }}&emsp;<a href="#" class="text-danger">rendre</a></li>#}
             {% endfor %}
         </ul>
     </div>

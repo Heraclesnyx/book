@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a3066203-cddf-4fe5-9337-2e087c176cde" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book_store/src/AppBundle/Controller/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/book_store/src/AppBundle/Controller/BookController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book_store/app/Resources/views/loans/loan.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/book_store/app/Resources/views/loans/loan.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book_store/src/AppBundle/Controller/CustomersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/book_store/src/AppBundle/Controller/CustomersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book_store/src/AppBundle/Controller/LoansController.php" beforeDir="false" afterPath="$PROJECT_DIR$/book_store/src/AppBundle/Controller/LoansController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book_store/src/AppBundle/Repository/BooksRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/book_store/src/AppBundle/Repository/BooksRepository.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,25 +25,53 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Controller/CustomersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="141" column="59" selection-start-line="141" selection-start-column="59" selection-end-line="141" selection-end-column="59" />
+            <state relative-caret-position="1034">
+              <caret line="124" column="35" selection-start-line="123" selection-start-column="11" selection-end-line="124" selection-end-column="35" />
               <folding>
                 <element signature="e#40#70#0#PHP" expanded="true" />
-                <element signature="e#4026#4043#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Controller/BookController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1677">
+              <caret line="126" column="7" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
+              <folding>
+                <element signature="e#40#66#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Controller/BookController.php">
+        <entry file="file://$PROJECT_DIR$/book_store/app/Resources/views/loans/loan.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="104" column="20" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="20" />
+            <state relative-caret-position="323">
+              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Controller/LoansController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="888">
+              <caret line="111" column="6" selection-start-line="111" selection-start-column="6" selection-end-line="111" selection-end-column="6" />
               <folding>
-                <element signature="e#40#66#0#PHP" expanded="true" />
-                <element signature="e#3553#3566#0#PHP" expanded="true" />
+                <element signature="e#41#67#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Entity/Book.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="539">
+              <caret line="193" selection-start-line="193" selection-end-line="193" />
             </state>
           </provider>
         </entry>
@@ -48,20 +79,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Entity/Customer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4165">
+            <state relative-caret-position="3349">
               <caret line="246" column="1" selection-start-line="246" selection-start-column="1" selection-end-line="246" selection-end-column="1" />
               <folding>
                 <element signature="e#36#68#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/book_store/app/Resources/views/loans/loan.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -85,20 +107,20 @@
         <option value="$PROJECT_DIR$/book_store/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/book_store/src/AppBundle/Form/LoansType.php" />
         <option value="$PROJECT_DIR$/book_store/src/AppBundle/Repository/CustomersRepository.php" />
-        <option value="$PROJECT_DIR$/book_store/src/AppBundle/Repository/BooksRepository.php" />
         <option value="$PROJECT_DIR$/book_store/app/Resources/views/book/show.html.twig" />
         <option value="$PROJECT_DIR$/book_store/app/Resources/views/customers/show.html.twig" />
         <option value="$PROJECT_DIR$/book_store/app/Resources/views/customers/edit.html.twig" />
         <option value="$PROJECT_DIR$/book_store/src/AppBundle/Entity/Customer.php" />
         <option value="$PROJECT_DIR$/book_store/src/AppBundle/Form/LoanType.php" />
-        <option value="$PROJECT_DIR$/book_store/src/AppBundle/Controller/LoansController.php" />
         <option value="$PROJECT_DIR$/book_store/app/Resources/views/book/index.html.twig" />
         <option value="$PROJECT_DIR$/book_store/app/Resources/views/customers/index.html.twig" />
-        <option value="$PROJECT_DIR$/book_store/app/Resources/views/loans/loan.html.twig" />
         <option value="$PROJECT_DIR$/book_store/app/config/security.yml" />
         <option value="$PROJECT_DIR$/book_store/app/Resources/views/loans/index.html.twig" />
-        <option value="$PROJECT_DIR$/book_store/src/AppBundle/Controller/CustomersController.php" />
         <option value="$PROJECT_DIR$/book_store/src/AppBundle/Controller/BookController.php" />
+        <option value="$PROJECT_DIR$/book_store/src/AppBundle/Controller/CustomersController.php" />
+        <option value="$PROJECT_DIR$/book_store/app/Resources/views/loans/loan.html.twig" />
+        <option value="$PROJECT_DIR$/book_store/src/AppBundle/Repository/BooksRepository.php" />
+        <option value="$PROJECT_DIR$/book_store/src/AppBundle/Controller/LoansController.php" />
       </list>
     </option>
   </component>
@@ -162,9 +184,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="762" />
-    <option name="height" value="1038" />
+    <option name="x" value="-10" />
+    <option name="width" value="765" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -211,33 +233,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="book" type="b2602c69:ProjectViewProjectNode" />
-              <item name="book" type="462c0819:PsiDirectoryNode" />
-              <item name="book_store" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="book" type="b2602c69:ProjectViewProjectNode" />
-              <item name="book" type="462c0819:PsiDirectoryNode" />
-              <item name="book_store" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="book" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="book" type="b2602c69:ProjectViewProjectNode" />
-              <item name="book" type="462c0819:PsiDirectoryNode" />
-              <item name="book_store" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="customers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="book" type="b2602c69:ProjectViewProjectNode" />
@@ -306,7 +301,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Symfony.ProfilerSettingsForm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="settings.editor.splitter.proportion" value="0.2375297" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/book_store/app/Resources/views/book/index.html.twig" />
   </component>
@@ -377,18 +372,24 @@
       <workItem from="1554198089725" duration="17464000" />
       <workItem from="1554281323237" duration="17726000" />
       <workItem from="1554320180131" duration="975000" />
-      <workItem from="1554367422309" duration="4333000" />
+      <workItem from="1554367422309" duration="9242000" />
+      <workItem from="1554457427248" duration="1671000" />
+      <workItem from="1554718669925" duration="1133000" />
+      <workItem from="1554803206167" duration="992000" />
+      <workItem from="1554889366276" duration="3678000" />
+      <workItem from="1554970656513" duration="1290000" />
+      <workItem from="1555314366801" duration="14578000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77036000" />
+    <option name="totallyTimeSpent" value="105287000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18657719" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20268457" />
       <window_info id="Structure" order="1" weight="0.24966443" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -439,13 +440,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/book_store/app/Resources/views/loans/show.html.twig" />
     <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Form/LoansType.php" />
-    <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Repository/CustomersRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Controller/BaseController.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -525,13 +519,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/book_store/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/book_store/app/Resources/views/book/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="505">
@@ -560,13 +547,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Repository/BooksRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Form/LoanType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -577,27 +557,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Entity/Customer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4165">
-          <caret line="246" column="1" selection-start-line="246" selection-start-column="1" selection-end-line="246" selection-end-column="1" />
-          <folding>
-            <element signature="e#36#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/book_store/app/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/book_store/app/Resources/views/loans/loan.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/book_store/app/config/routing_dev.yml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/book_store/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-598" />
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/book_store/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
@@ -606,50 +573,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/book_store/app/Resources/views/loans/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Repository/CustomersRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="408">
+          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Entity/Book.php">
+    <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Entity/Customer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="164" column="5" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Controller/LoansController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="89" column="30" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="50" />
+        <state relative-caret-position="3349">
+          <caret line="246" column="1" selection-start-line="246" selection-start-column="1" selection-end-line="246" selection-end-column="1" />
           <folding>
-            <element signature="e#41#67#0#PHP" expanded="true" />
-            <element signature="e#2392#2414#0#PHP" expanded="true" />
+            <element signature="e#36#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Controller/CustomersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="141" column="59" selection-start-line="141" selection-start-column="59" selection-end-line="141" selection-end-column="59" />
+        <state relative-caret-position="1034">
+          <caret line="124" column="35" selection-start-line="123" selection-start-column="11" selection-end-line="124" selection-end-column="35" />
           <folding>
             <element signature="e#40#70#0#PHP" expanded="true" />
-            <element signature="e#4026#4043#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Entity/Book.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="193" selection-start-line="193" selection-end-line="193" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Controller/BookController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="104" column="20" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="20" />
+        <state relative-caret-position="1677">
+          <caret line="126" column="7" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
           <folding>
             <element signature="e#40#66#0#PHP" expanded="true" />
-            <element signature="e#3553#3566#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Repository/BooksRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
+          <folding>
+            <element signature="e#40#66#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book_store/src/AppBundle/Controller/LoansController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="888">
+          <caret line="111" column="6" selection-start-line="111" selection-start-column="6" selection-end-line="111" selection-end-column="6" />
+          <folding>
+            <element signature="e#41#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book_store/app/Resources/views/loans/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book_store/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book_store/app/Resources/views/loans/loan.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
         </state>
       </provider>
     </entry>

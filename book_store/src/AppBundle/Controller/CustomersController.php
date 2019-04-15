@@ -141,7 +141,6 @@ class CustomersController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('customer_delete', array('id' => $customer->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }

@@ -2,6 +2,7 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\Book;
 use Doctrine\ORM\EntityRepository;
 /**
  * BooksRepository
@@ -30,5 +31,14 @@ class BooksRepository extends EntityRepository
             ->addSelect('c', 'b')
             ->where('b.customer is null')
             ->orderBy('b.name');
+    }
+
+    public function getOneBookById(int $id) {
+
+        $test= $this->createQueryBuilder('i')
+            -leftJoin('i.customer', 'b')
+            ->addSelect('b', 'i');
+
+        return $this->getQuery()->getOneOrNullResult();
     }
 }
