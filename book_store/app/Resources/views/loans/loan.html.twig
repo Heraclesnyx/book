@@ -39,7 +39,8 @@
                 const id = $(this).data('id');
                 $.post(actionUrl.replace(/__ID__/g, id), function (data) {
                     location.href = data;
-                })
+                });
+                window.location.reload();
             })
         })
     </script>
