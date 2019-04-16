@@ -17,13 +17,9 @@
     <div class="form-group">
         <ul class="books">
             {% for book in customer.book %}
-    {#{{ dump(book) }}#}
                 <li>{{ book.name }}
-                    <form method="post" action="{{ path('loan_delete', {'id': book.id}) }}">
-                        <button type="submit">rendre</button>
-                    </form>
+                    <button type="button" data-id="{{ book.id }}">rendre</button>
                 </li>
-                    {# }}&emsp;<a href="#" class="text-danger">rendre</a></li>#}
             {% endfor %}
         </ul>
     </div>
@@ -36,6 +32,14 @@
             $('select').first().on('change', function () {
                 $(this).hide();
                 $('form').submit();
+            });
+
+            $('button[data-id]').on('click', function() {
+                const actionUrl = '{{ path('loan_delete', {'id': '__ID__'}) }}';
+                const id = $(this).data('id');
+                $.post(actionUrl.replace(/__ID__/g, id), function (data) {
+                    location.href = data;
+                })
             })
         })
     </script>

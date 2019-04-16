@@ -106,13 +106,9 @@ class LoansController extends Controller
      */
     public function BringBackAction(Request $request, int $id)
     {
-        /*dump($book);die();*/
-
-
         $customerLoan= $this->getDoctrine()->getRepository(Book::class)->getOneBookById($id);
+        $customerId = $customerLoan->getCustomer()->getId();
 
-        /*$entityManager = $this->getDoctrine()->getManager();*/
-        /*dump($customerLoan);*/
         $customerLoan->setCustomer(null);
         $customerLoan->setLaonDate(null);
 
@@ -121,10 +117,7 @@ class LoansController extends Controller
 
         $em->flush();
 
-        return $this->redirectToRoute("show_customer_loans");
-
-
+        return new JsonResponse($this->generateUrl("show_customer_loans", ['id' => $customerId]));
     }
-
 
 }
