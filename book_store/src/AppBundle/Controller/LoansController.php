@@ -60,6 +60,7 @@ class LoansController extends Controller
     {
         $customerLoan = $this->getDoctrine()->getRepository(Customer::class)->getLoanRecords($id);
 
+
         if (!$customerLoan)
             throw new NotFoundHttpException();
 
@@ -79,6 +80,7 @@ class LoansController extends Controller
              */
             $book = $em->getReference(Book::class, $request->request->get('loan')['available_books']);
 
+
             $book
                 ->setCustomer($customerLoan)
                 ->setLaonDate(new \DateTime('now'));
@@ -88,38 +90,39 @@ class LoansController extends Controller
 
             return $this->redirectToRoute('list_loans');
         }
-
         return $this->render('loans/loan.html.twig', [
             'customer' => $customerLoan,
             'form' => $form->createView()
         ]);
+
+
     }
 
     /**
      * Deletes a loan.
      *
-     * @var Book $book
      *@Route("/{id}/delete", name="loan_delete")
      *@Method("POST")
      */
-    public function BringBackAction(Request $request, int $id, Book $book)
+    public function BringBackAction(Request $request, int $id)
     {
         /*dump($book);die();*/
 
 
-        $customerLoan= $this->getDoctrine()->getRepository(Book::class)->findBy(
-            array('id'=>$book->getId())
-    );
+        $customerLoan= $this->getDoctrine()->getRepository(Book::class)->getOneBookById($id);
 
         /*$entityManager = $this->getDoctrine()->getManager();*/
-
+        /*dump($customerLoan);*/
         $customerLoan->setCustomer(null);
-        $customerLoan->setLaonDate(null)
-            ->persist($customerLoan);
+        $customerLoan->setLaonDate(null);
 
-        $customerLoan->flush();
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($customerLoan);
 
-        return $this->redirectToRoute("/show_customer_loans/");
+        $em->flush();
+
+        return $this->redirectToRoute("/loans/index.html.twig");
+
 
     }
 

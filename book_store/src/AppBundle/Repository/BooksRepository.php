@@ -4,6 +4,8 @@ namespace AppBundle\Repository;
 
 use AppBundle\Entity\Book;
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
+
 /**
  * BooksRepository
  *
@@ -33,12 +35,20 @@ class BooksRepository extends EntityRepository
             ->orderBy('b.name');
     }
 
+    /*Pour rendre un livre en fonction de son id + liaison avec le customer d'où i=id et b = book */
     public function getOneBookById(int $id) {
 
         $test= $this->createQueryBuilder('i')
-            -leftJoin('i.customer', 'b')
-            ->addSelect('b', 'i');
+            ->leftJoin('i.customer', 'b')
+            ->addSelect('b', 'i')
+            ->where('i.id = :ID')
+            ->andWhere('i.customer is not null')
+            ->setParameter('ID',$id);
 
-        return $this->getQuery()->getOneOrNullResult();
+
+
+        return $test->getQuery()->getOneOrNullResult();
+
+
     }
 }
