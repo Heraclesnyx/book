@@ -121,7 +121,7 @@ class LoansController extends Controller
 
         $em->flush();
 
-        return $this->redirectToRoute("/loans/index.html.twig");
+        return $this->redirectToRoute("show_customer_loans");
 
 
     }
